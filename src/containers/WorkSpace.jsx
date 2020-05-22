@@ -13,9 +13,11 @@ class WorkSpace extends React.Component{
     render(){
         return(
             <MuiThemeProvider theme={theme}>
-                <div className= "word_space">
-                    <SpaceHeader/>
+                <div className= "work_space">
                     <SpaceWork/>
+                </div >
+                <div className="tool_space">
+                    <SpaceHeader/>
                 </div>
             </MuiThemeProvider>
 

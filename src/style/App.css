@@ -15,28 +15,32 @@ body {
   width: 100%;
   height: 100%;
 }
+.tool_space{
+  background-color: #252526;
+}
 .app-container{
 
 }
 .root {
   display: flex;
   width: 100%;
-  height: 100vh;
   height: 100%;
   margin: 0;
 }
 .app{
-  display: flex;
+  display: -webkit-inline-flex;
   height: 100%;
+  width: 100%;
 }
 
 .left_col {
   background-color: #252526;
   width: 20%;
   flex-direction: column;
+  display: inherit;
 }
 
-.word_space{
+.work_space{
   background: rgba(43, 43, 43, 0.96);
   display: flex;
   flex-direction: column;

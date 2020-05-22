@@ -27,7 +27,6 @@ class SpaceWork extends Component {
         return (
             <Stage width={window.innerWidth} height={window.innerHeight}>
                 <Layer>
-                    <Text text="Try to drag a star" />
                     {[...Array(10)].map((_, i) => (
                         <Star
                             key={i}

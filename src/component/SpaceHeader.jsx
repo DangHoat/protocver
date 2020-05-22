@@ -86,58 +86,60 @@ const SpaceHeader = (props)=>{
     } = props;
 
     return (
-        <div className="main-header">
-            <div className="main-header-buttons" style={{ marginRight: 'auto' }}>
-                <Tooltip title="zoom in">
+        <div className="app-container">
+            <div className="main-header">
+                <div className="main-header-buttons" style={{ marginRight: 'auto' }}>
+                    <Tooltip title="zoom in">
+                        <div>
+                            <Button disabled={!image} color="default" className={classes.button} onClick={increaseHeight}>
+                                <ZoomInIcon className={classes.light} />
+                            </Button>
+                        </div>
+                    </Tooltip>
+                    <Tooltip title="zoom out">
+                        <div>
+                            <Button disabled={!image} color="default" className={classes.button} onClick={decreaseHeight}>
+                                <ZoomOutIcon className={classes.light} />
+                            </Button>
+                        </div>
+                    </Tooltip>
+                    <Tooltip title="toggle drag">
+                        <div>
+                            <Button disabled={!image} color="default" className={toggleDrag ? classes.buttonDrag : classes.buttonDragDark} onClick={toggleDrag}>
+                                <OpenWithIcon className={toggleClass ? classes.light : classes.dark} />
+                            </Button>
+                        </div>
+                    </Tooltip>
+                </div>
+                <div className="main-header-buttons" >
+                    <Tooltip title="remove image">
+                        <div>
+                            <Button disabled={!image} color="default" className={classes.button} onClick={showImageDeleteModal}>
+                                <DeleteOutlineIcon className={classes.light} />
+                            </Button>
+                        </div>
+                    </Tooltip>
+                    <Tooltip title={image ? 'update image' : 'upload image'}>
+                        <div>
+                            <Button color="default" className={classes.button} onClick={updateImage}>
+                                <ImageSearchIcon className={classes.light} />
+                            </Button>
+                        </div>
+                    </Tooltip>
+                    <Tooltip title={'export'}>
+                        <div>
+                            <Button color='default' className={classes.button} disabled={totalComponents < 1} onClick={showGenerateAppModal}>
+                                <GetAppIcon className={classes.light} />
+                            </Button>
+                        </div>
+                    </Tooltip>
                     <div>
-                        <Button disabled={!image} color="default" className={classes.button} onClick={increaseHeight}>
-                            <ZoomInIcon className={classes.light} />
+                        <Button color="default" className={classes.button} onClick={() => collapseColumn()}>
+                            {rightColumnOpen ? <KeyboardArrowRightIcon
+                                className={classes.light} /> : <KeyboardArrowLeftIcon className={classes.light}
+                            />}
                         </Button>
                     </div>
-                </Tooltip>
-                <Tooltip title="zoom out">
-                    <div>
-                        <Button disabled={!image} color="default" className={classes.button} onClick={decreaseHeight}>
-                            <ZoomOutIcon className={classes.light} />
-                        </Button>
-                    </div>
-                </Tooltip>
-                <Tooltip title="toggle drag">
-                    <div>
-                        <Button disabled={!image} color="default" className={toggleDrag ? classes.buttonDrag : classes.buttonDragDark} onClick={toggleDrag}>
-                            <OpenWithIcon className={toggleClass ? classes.light : classes.dark} />
-                        </Button>
-                    </div>
-                </Tooltip>
-            </div>
-            <div className="main-header-buttons" >
-                <Tooltip title="remove image">
-                    <div>
-                        <Button disabled={!image} color="default" className={classes.button} onClick={showImageDeleteModal}>
-                            <DeleteOutlineIcon className={classes.light} />
-                        </Button>
-                    </div>
-                </Tooltip>
-                <Tooltip title={image ? 'update image' : 'upload image'}>
-                    <div>
-                        <Button color="default" className={classes.button} onClick={updateImage}>
-                            <ImageSearchIcon className={classes.light} />
-                        </Button>
-                    </div>
-                </Tooltip>
-                <Tooltip title={'export'}>
-                    <div>
-                        <Button color='default' className={classes.button} disabled={totalComponents < 1} onClick={showGenerateAppModal}>
-                            <GetAppIcon className={classes.light} />
-                        </Button>
-                    </div>
-                </Tooltip>
-                <div>
-                    <Button color="default" className={classes.button} onClick={() => collapseColumn()}>
-                        {rightColumnOpen ? <KeyboardArrowRightIcon
-                            className={classes.light} /> : <KeyboardArrowLeftIcon className={classes.light}
-                        />}
-                    </Button>
                 </div>
             </div>
         </div>
