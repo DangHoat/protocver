@@ -1,4 +1,5 @@
 import React ,{Component} from 'react'
+import ItemComponent from "../component/ItemComponent";
 class LeftCol extends React.Component{
   constructor(props){
       super(props)
@@ -6,7 +7,7 @@ class LeftCol extends React.Component{
     render(){
         return(
             <div className= "left_col">
-
+                <ItemComponent/>
             </div>
         )
     }
